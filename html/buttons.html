@@ -1,66 +1,66 @@
-    <head>
+        <head>
 
-    </head>
+        </head>
 
-    <body>
-        
+        <body>
+            
 
 
-    <style> 
-        .subscribe-button{
-            background-color: rgb(201, 0, 0);
-            color: white;
-            border: none;
+        <style> 
+            .subscribe-button{
+                background-color: rgb(201, 0, 0);
+                color: white;
+                border: none;
+                height: 35px;
+                width: 105px;
+                border-radius: 3px; 
+                cursor: pointer;
+            }
+
+            .subscribe-button:hover{
+            opacity:0.6 ;
+            transition: opacity 0.5s;
+
+            }
+
+            .subscribe-button:active{
+                opacity: 0.3;
+                transition: 0.1s;
+            }
+
+
+
+
+            .join-button{
+
+            background-color: white;
+            color: blue;
             height: 35px;
-            width: 105px;
-            border-radius: 3px; 
+            width: 60px;
+            border-radius: 3px;  
+            border-color: blue;
+            border-style: solid;
+            border-width: 2px;
             cursor: pointer;
-        }
+            margin-left: 8px ; 
+            transition: background-color 0.5s,
+            opacity 0.8s;
 
-        .subscribe-button:hover{
-         opacity:0.6 ;
-         transition: opacity 0.5s;
+            }
 
-        }
+            .join-button:hover{
 
-        .subscribe-button:active{
-            opacity: 0.3;
-            transition: 0.1s;
-        }
+            background-color:blue ;
+            color:white ; 
+            opacity: 0.8;
+            }
 
-
-
-
-        .join-button{
-
-        background-color: white;
-        color: blue;
-        height: 35px;
-        width: 60px;
-        border-radius: 3px;  
-        border-color: blue;
-        border-style: solid;
-        border-width: 2px;
-        cursor: pointer;
-        margin-left: 8px ; 
-        transition: background-color 0.5s,
-        opacity 0.8s;
-
-        }
-
-        .join-button:hover{
-
-           background-color:blue ;
-           color:white ; 
-           opacity: 0.8;
-        }
-
-        .join-button:active{
-            opacity: 0.5;
+            .join-button:active{
+                opacity: 0.5;
 
 
 
-        }
+            }
 
 
 
@@ -69,43 +69,52 @@
 
 
 
-        .tweet-button{
+            .tweet-button{
 
-        background-color: rgb(40, 109, 193);
-        color: white;
-        height: 35px;
-        width: 74px;
-        border-radius: 18px;
-        border: none;
-        cursor: pointer;
-        margin-left: 8px ; 
-        font-family: 17px;
-
-        }
-        .tweet-button:hover{
-
-            background-color: black;
+            background-color: rgb(40, 109, 193);
+            color: white;
             height: 35px;
-        width: 100px;
-        transition: width 1s;
+            width: 74px;
+            border-radius: 18px;
+            border: none;
+            cursor: pointer;
+            margin-left: 8px ; 
+            font-family: 17px;
+            
+
         
-        }
-    </style>
+            }
+            .tweet-button:hover{
+
+                background-color: black;
+                height: 35px;
+            width: 100px;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
+            transition: box-shadow 1s , width 1s;
+           
+           
+            /* the first parameter is the horizontal positioning of the shadow, second is the vertical and third is for blur*/
+            /* the a attribute in rgba means the opacity of it */
+            
+            }
+
+
+        </style>
 
 
 
 
-    <button class="subscribe-button">
-        Subscribe
-    </button>
+        <button class="subscribe-button">
+            Subscribe
+        </button>
 
-    <button class="Join-button">
-        join
-    </button>
+        <button class="Join-button">
+            join
+        </button>
 
-    <button class="tweet-button">
-        Tweet 
-    </button>
+        <button class="tweet-button">
+            Tweet 
+        </button>
 
 
-    </body>
+        </body>
