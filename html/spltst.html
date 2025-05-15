@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hackathon Scoring System</title>
+  <style>
+    :root {
+      --bg: #eaf1ff;
+      --header-bg: #ffffff;
+      --accent: #7c3aed;
+      --link-blue: #3b82f6;
+      --text-dark: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--header-bg);
+      padding: 1.5rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0 0 16px 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--link-blue);
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.8;
+    }
+
+    .signup-btn {
+      background-color: #a5b4fc;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 0.4rem 1.2rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .signup-btn:hover {
+      background-color: #818cf8;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 5%;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #334155;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cta {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background-color: #6d28d9;
+    }
+
+    .features {
+      padding: 4rem 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      background-color: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature p {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Project name</div>
+    <nav>
+      <a href="#">Log In</a>
+      <button class="signup-btn">Sign up</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Score Smarter, Not Harder</h1>
+    <p>The ultimate platform to simplify hackathon judging. Automate scoring, manage judges, and announce winners in real-time.</p>
+    <button class="cta">Start Scoring</button>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Live Judging</h3>
+      <p>View scores as they’re submitted. Keep everything transparent and up to the minute.</p>
+    </div>
+    <div class="feature">
+      <h3>Custom Score Sheets</h3>
+      <p>Define your own criteria: innovation, usability, impact — your rules, your flow.</p>
+    </div>
+    <div class="feature">
+      <h3>Admin Controls</h3>
+      <p>Manage teams, track progress, and export final results all from one place.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Project name. All rights reserved.
+  </footer>
+
+</body>
+</html>
