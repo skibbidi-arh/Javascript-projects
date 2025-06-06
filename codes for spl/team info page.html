@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cofiesta Project Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: #f4f8ff;
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .main-bg {
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      background: #f4f8ff;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      padding: 0 48px;
+      height: 70px;
+      background: #e7f0fe;
+      border-bottom: 1.5px solid #dae6f9;
+      box-shadow: 0 4px 18px rgba(41, 74, 136, 0.05);
+    }
+    .logo {
+      height: 32px;
+      margin-right: 14px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(60,120,200,0.06);
+      object-fit: contain;
+    }
+    .title {
+      font-size: 1.8rem;
+      color: #2563eb;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+    .content-area {
+      width: 100%;
+      max-width: 1050px;
+      margin: 38px auto 0 auto;
+      padding: 0 36px 42px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .section {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(80, 120, 200, 0.07);
+      padding: 28px 32px 30px 32px;
+      margin: 0;
+      width: 100%;
+    }
+    .section-label {
+      font-size: 1.19rem;
+      color: #2688fa;
+      font-weight: 600;
+      margin-bottom: 10px;
+      border-left: 4px solid #3b82f6;
+      padding-left: 11px;
+      margin-top: 0;
+      letter-spacing: 0.1px;
+    }
+    .section.features-section {
+      border: 2.2px solid #3da8ff;
+      box-shadow: 0 4px 18px rgba(80, 120, 200, 0.08);
+    }
+    textarea {
+      width: 100%;
+      min-height: 52px;
+      border: none;
+      resize: vertical;
+      background: transparent;
+      font-size: 1.07rem;
+      color: #314262;
+      font-family: inherit;
+      margin-top: 2px;
+      outline: none;
+    }
+    input[type="text"], input[type="url"] {
+      width: 100%;
+      background: #dae5fb;
+      color: #223d7a;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 1.07rem;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      margin-bottom: 9px;
+      box-sizing: border-box;
+      transition: background 0.17s;
+    }
+    input[type="text"]:focus, input[type="url"]:focus {
+      background: #ecf2fe;
+    }
+    .repo-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .repo-link-btn {
+      background: #3da8ff;
+      color: #fff;
+      border-radius: 7px;
+      padding: 10px 18px;
+      border: none;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(80,120,200,0.03);
+      cursor: pointer;
+      transition: background 0.18s;
+      margin-left: 2px;
+      margin-bottom: 9px;
+    }
+    .repo-link-btn:hover {
+      background: #2594e3;
+    }
+    .stats-btn {
+      display: block;
+      margin: 0 auto 0 auto;
+      background: #cbdfff;
+      color: #3657a2;
+      border-radius: 8px;
+      padding: 11px 28px;
+      border: none;
+      font-size: 1.04rem;
+      box-shadow: 0 2px 4px rgba(80,120,200,0.03);
+      cursor: pointer;
+      transition: background 0.18s;
+    }
+    .stats-btn:hover {
+      background: #bad3fa;
+    }
+    .team-info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+    .team-info-labels, .team-info-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 170px;
+    }
+    .team-name-label, .team-members-label {
+      font-size: 1.11rem;
+      color: #28456e;
+      font-weight: 500;
+    }
+    .team-members-list {
+      padding-left: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .team-member {
+      background: #dae5fb;
+      border-radius: 8px;
+      margin-bottom: 6px;
+      padding: 7px 16px;
+      width: 90%;
+      border: none;
+      outline: none;
+      font-size: 1.09rem;
+      color: #223d7a;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+    /* Features */
+    #featureInput {
+      flex: 1;
+      padding: 9px 13px;
+      border-radius: 7px;
+      border: 1.5px solid #b2d7ff;
+      font-size: 1rem;
+      background: #fff;
+      margin-bottom: 0;
+    }
+    #addFeatureBtn {
+      background: #3da8ff;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 1rem;
+      padding: 9px 20px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background 0.18s;
+    }
+    #addFeatureBtn:hover { background: #2594e3; }
+    .feature-box {
+      background: #f6fbff;
+      border: 1.5px solid #b7e0ff;
+      border-radius: 8px;
+      padding: 13px 15px 13px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.07rem;
+      transition: box-shadow 0.13s;
+    }
+    .feature-text {
+      word-break: break-word;
+      flex: 1;
+      margin-right: 14px;
+    }
+    .remove-feature-btn {
+      background: transparent;
+      border: none;
+      color: #ff5656;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-left: 14px;
+      transition: color 0.13s;
+    }
+    .remove-feature-btn:hover {
+      color: #b70000;
+    }
+    @media (max-width: 1200px) {
+      .content-area { max-width: 96vw; }
+    }
+    @media (max-width: 800px) {
+      .content-area { padding: 0 3vw; }
+      .header { padding: 0 4vw; }
+    }
+    @media (max-width: 600px) {
+      .header { flex-direction: column; align-items: flex-start; padding: 0 6px; height: auto; }
+      .content-area { padding: 0 5px; }
+      .section { padding: 15px 7px 20px 7px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-bg">
+    <!-- Header and Logo -->
+    <div class="header">
+      <img src="https://i.imgur.com/J8ixBpn.png" class="logo" alt="logo" />
+      <div class="title">Cofiesta</div>
+    </div>
+    <!-- Main content area -->
+    <div class="content-area">
+      <!-- Team Info at Top -->
+      <div class="section">
+        <div class="section-label">Team Info</div>
+        <div class="team-info-row">
+          <div class="team-info-labels">
+            <div class="team-name-label">Team Name:</div>
+            <div class="team-members-label">Team Members:</div>
+          </div>
+          <div class="team-info-inputs">
+            <input class="team-name" id="teamNameInput" type="text" placeholder="Enter team name" />
+            <ol class="team-members-list" id="teamMembersList">
+              <li><input class="team-member" type="text" placeholder="Member 1 name"></li>
+              <li><input class="team-member" type="text" placeholder="Member 2 name"></li>
+              <li><input class="team-member" type="text" placeholder="Member 3 name"></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!-- Github Repo -->
+      <div class="section">
+        <div class="section-label">Github Repo</div>
+        <div class="repo-row">
+          <input id="repoInput" class="repo-link" type="url" placeholder="Enter Github repo URL" />
+          <button class="repo-link-btn" title="Open Repo" onclick="openRepo()">Open</button>
+        </div>
+        <button class="stats-btn" onclick="alert('Show contribution and stats popup (demo)!')">
+          See contribution and stats
+        </button>
+      </div>
+      <!-- Motivation -->
+      <div class="section">
+        <div class="section-label">Motivation</div>
+        <textarea id="motivationInput" placeholder="Enter motivation here..."></textarea>
+      </div>
+      <!-- Overview -->
+      <div class="section">
+        <div class="section-label">Overview</div>
+        <textarea id="overviewInput" placeholder="Enter overview here..."></textarea>
+      </div>
+      <!-- Features -->
+      <div class="section features-section" id="featuresSection">
+        <div class="section-label">Features</div>
+        <div style="display: flex; gap: 12px; margin-bottom: 14px;">
+          <input type="text" id="featureInput" placeholder="Type a new feature...">
+          <button id="addFeatureBtn" onclick="addFeature()">Add</button>
+        </div>
+        <div id="featureList" style="display:flex; flex-direction:column; gap:10px;">
+          <!-- Features will be injected here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // --- Local Storage Keys ---
+    const STORAGE_KEYS = {
+      teamName: 'cofiesta_teamName',
+      teamMembers: 'cofiesta_teamMembers',
+      repo: 'cofiesta_repo',
+      motivation: 'cofiesta_motivation',
+      overview: 'cofiesta_overview',
+      features: 'cofiesta_features'
+    };
+
+    // --- Team Name ---
+    const teamNameInput = document.getElementById('teamNameInput');
+    teamNameInput.value = localStorage.getItem(STORAGE_KEYS.teamName) || '';
+    teamNameInput.addEventListener('input', () => {
+      localStorage.setItem(STORAGE_KEYS.teamName, teamNameInput.value);
+    });
+
+    // --- Team Members (up to 3) ---
+    const memberInputs = document.querySelectorAll('.team-member');
+    const savedMembers = JSON.parse(localStorage.getItem(STORAGE_KEYS.teamMembers) || '[]');
+    memberInputs.forEach((input, idx) => {
+      input.value = savedMembers[idx] || '';
+      input.addEventListener('input', () => {
+        const vals = Array.from(memberInputs).map(i => i.value);
+        localStorage.setItem(STORAGE_KEYS.teamMembers, JSON.stringify(vals));
+      });
+    });
+
+    // --- GitHub Repo ---
+    const repoInput = document.getElementById('repoInput');
+    repoInput.value = localStorage.getItem(STORAGE_KEYS.repo) || '';
+    repoInput.addEventListener('input', () => {
+      localStorage.setItem(STORAGE_KEYS.repo, repoInput.value);
+    });
+
+    // Allow pressing Enter in the Github input to open the repo
+    repoInput.addEventListener('keydown', function(e) {
+      if(e.key === "Enter") openRepo();
+    });
+    function openRepo() {
+      let val = repoInput.value.trim();
+      if(val && /^https?:\/\//i.test(val)) {
+        window.open(val, '_blank');
+      } else {
+        alert("Please enter a valid repository URL (must start with http:// or https://)");
+      }
+    }
+
+    // --- Motivation ---
+    const motivationInput = document.getElementById('motivationInput');
+    motivationInput.value = localStorage.getItem(STORAGE_KEYS.motivation) || '';
+    motivationInput.addEventListener('input', () => {
+      localStorage.setItem(STORAGE_KEYS.motivation, motivationInput.value);
+    });
+
+    // --- Overview ---
+    const overviewInput = document.getElementById('overviewInput');
+    overviewInput.value = localStorage.getItem(STORAGE_KEYS.overview) || '';
+    overviewInput.addEventListener('input', () => {
+      localStorage.setItem(STORAGE_KEYS.overview, overviewInput.value);
+    });
+
+    // --- Features List ---
+    let features = [];
+    function loadFeatures() {
+      features = JSON.parse(localStorage.getItem(STORAGE_KEYS.features) || '[]');
+    }
+    function saveFeatures() {
+      localStorage.setItem(STORAGE_KEYS.features, JSON.stringify(features));
+    }
+    function renderFeatures() {
+      const featureList = document.getElementById('featureList');
+      featureList.innerHTML = '';
+      if(features.length === 0) {
+        featureList.innerHTML = `<div style="color:#767676; font-size:1.07rem; margin-top:15px;">No features added yet.</div>`;
+      } else {
+        features.forEach((feature, idx) => {
+          const div = document.createElement('div');
+          div.className = "feature-box";
+          // Feature text
+          const text = document.createElement('div');
+          text.className = "feature-text";
+          text.textContent = feature;
+          // Remove button
+          const removeBtn = document.createElement('button');
+          removeBtn.textContent = "✕";
+          removeBtn.className = "remove-feature-btn";
+          removeBtn.title = "Remove";
+          removeBtn.onclick = function() {
+            features.splice(idx, 1);
+            saveFeatures();
+            renderFeatures();
+          };
+          div.appendChild(text);
+          div.appendChild(removeBtn);
+          featureList.appendChild(div);
+        });
+      }
+    }
+    function addFeature() {
+      const input = document.getElementById('featureInput');
+      const val = input.value.trim();
+      if(val) {
+        features.push(val);
+        input.value = '';
+        saveFeatures();
+        renderFeatures();
+      } else {
+        input.focus();
+      }
+    }
+    document.getElementById('featureInput').addEventListener('keydown', function(e) {
+      if(e.key === "Enter") addFeature();
+    });
+    // Initial load
+    loadFeatures();
+    renderFeatures();
+  </script>
+</body>
+</html>

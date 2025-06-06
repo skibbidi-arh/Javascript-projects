@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #210404;
+    color: aliceblue;
+    height: 50px;
+    font-size: 27px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.gameContainer{
+background-color: aqua;
+display: flex;
+justify-content: center;
+margin-top:50px ;
+
+}
+
+.container{
+
+
+}
